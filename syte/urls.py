@@ -78,6 +78,12 @@ if settings.SOUNDCLOUD_INTEGRATION_ENABLED:
         url(r'^soundcloud/(?P<username>\S+)/?$', 'syte.views.soundcloud.soundcloud'),
     )
 
+if settings.WORDPRESS_INTEGRATION_ENABLED:
+    urlpatterns += patterns('',
+        url(r'^wordpress.json/?$', 'syte.views.wordpress.wordpress'),
+        url(r'^wordpress/(?P<post_id>\w+)?$', 'syte.views.wordpress.wordpress_post')
+    )
+
 #Statics: Hacky for now... fix this later...
 urlpatterns += patterns('',
     (r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {

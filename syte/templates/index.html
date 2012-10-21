@@ -8,10 +8,14 @@
 
 var postOffset = 0;
 $(function() {
-  {% if tag_slug %}
-  fetchBlogPosts(postOffset, "{{tag_slug}}");
+  {% if DEFAULT_BLOG == "tumblr" %}
+    {% if tag_slug %}
+    fetchBlogPosts(postOffset, "{{tag_slug}}");
+    {% else %}
+    fetchBlogPosts(postOffset);
+    {% endif %}
   {% else %}
-  fetchBlogPosts(postOffset);
+    fetchWordpressPosts(postOffset);
   {% endif %}
   {% if DISQUS_INTEGRATION_ENABLED %}
   $('body').bind('blog-post-loaded', function() {

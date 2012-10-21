@@ -3,6 +3,9 @@
 DEPLOYMENT_MODE = 'dev'
 COMPRESS_REVISION_NUMBER = '1.0'
 
+#Default blog
+#DEFAULT_BLOG = "tumblr"
+DEFAULT_BLOG = "wordpress"
 
 #Blog Integration: Tumblr
 TUMBLR_BLOG_URL = '[ENTER TUMBLR BLOG URL] ex. rigoneri.tumblr.com'
@@ -93,6 +96,11 @@ BITBUCKET_API_URL = 'https://api.bitbucket.org/1.0/'
 # Forks count require one connection for each repository,
 # set BITBUCKET_SHOW_FORKS to false to disable
 BITBUCKET_SHOW_FORKS = False
+
+
+#Wordpress Integration (Wordpress with JSON API plugin)
+WORDPRESS_INTEGRATION_ENABLED = True
+WORDPRESS_API_URL = 'http://YOUR_WORDPRESS/api' 
 
 
 if DEPLOYMENT_MODE == 'dev':

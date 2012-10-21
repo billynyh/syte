@@ -55,6 +55,7 @@ def compress_js():
         'components/base.js',
         'components/mobile.js',
         'components/blog-posts.js',
+        'components/wordpress.js',
         'components/links.js',
     ]
 
